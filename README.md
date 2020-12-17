@@ -5,6 +5,6 @@ After passing the class, I took it upon myself to learn more about the language 
 
 This repo is a free and public resource for anyone to use if they need a quick reference to learning Python's subtle, but fascinating, features.
 
-### Note: This repo is still a work in progress and I will probably be adding more directories and files to it for a while... like a long while. 
+### Note: This repo is still a work in progress and I will be adding more directories and files to it for a while... like a long while. 
 
 ##### Links to the websites and other resources I used to help me will be included in the not-too-distant future
