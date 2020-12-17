@@ -41,11 +41,38 @@ pitbull.bark() # Prints "Bark"
 # Example: User class
 
 class User:
-#   This is the __init__ function.
-#
+#   This is the __init__ function. Every class needs an __init__ method because it's a special function that python looks 
+#   for everytime you run the program. Whne you run the Python program, it will automatically call the __init__ function.
 #       |   |   |
-#       V   V   V
+#       V   V   V 
     def __init__(self, username, password):
-        pass
+        #          ^          
+        #          |
+        # This 'self' keyword is VERY important and refers to the instance of this User class
 
-user1 = User()
+        self.username = username # This line creates a variable called 'username' that is tied to the 'User' class. It's then assigned to the 'username' parameter in the __init__ function
+        self.password = password # Same concept here, but with the user's password
+
+    def printUsername(self):
+        print(self.username)
+
+    def printPassword(self):
+        print(self.password)
+
+
+# Here's an example of a User object using my name
+#
+#                     Not a real password I use
+#                           |
+#                           V
+user1 = User("Patrick", "patrick123")
+user1.printUsername() # Prints 'Patrick'
+user1.printPassword() # Prints 'patrick123'
+
+# You can also initiate another 'User' object and the values of 'username' and 'password' 
+# will change to the different values inputted.
+
+user2 = User("Bob", "Bob321")
+user2.printUsername() # Returns 'Bob'
+user2.printPassword() # Returns 'Bob321'
+
