@@ -105,6 +105,41 @@ class Car:
         #    |
         #   This one underscore here is used primarily by developers such as yourself to know that this variable is private.
 
+        # Finally, variables with two undersscores actually have a greater purpose behind-the-scenes
+        self.__message = "I am still a car" # <-- This is known as name mangling, and if you want to access it, you print(object._Car__message)
+        #     ^
+        #     |
+        #   This type of variable can't be accessed like how you would access other variables/functions
+        #   That's because the sole purpose of a variable like __message is only supposed to be tied to its parent class.
+        #   Essentially, variables like this are useful when you inherit another class from the parent class. Since both classes will have a variable 
+        #   __message, the two variables in each class won't conflict.
+
 toyota = Car("Toyota", "Camry", "2020")
 print(toyota._secret) # <-- Accessing private variable
+print(toyota._Car__message)
+
+# INSTANCE METHODS
+# I actually created an example of instance methods on line 69. 
+# Basically, an instance method is a function written inside of a class that you can access!
+
+class Person:
+    def __init__(self, name, age, gender):
+        self.name = name
+        self.age = age
+        self.gender = gender
+
+    def get_name(self):   # <------ These are all instance methods
+        print(self.name)  #       /  /
+                          #      /  /
+    def get_gender(self): # <---   /
+        print(self.gender)#       /
+                          #      /
+    def get_age(self):    # <---
+        print(self.age)
+
+person1 = Person("Patrick", "21", "Male")
+print(person1.get_name()) # Prints "Patrick"
+print(person1.get_age()) # Prints "21"
+print(person1.get_gender()) # Prints "Male"
+
 
