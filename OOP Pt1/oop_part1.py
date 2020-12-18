@@ -76,3 +76,35 @@ user2 = User("Bob", "Bob321")
 user2.printUsername() # Returns 'Bob'
 user2.printPassword() # Returns 'Bob321'
 
+# DUNDER METHODS AND UNDERSCORES
+# When you saw the __init__ function when making your first class, did it ever seem weird?
+# Did you just look at it and go "What is this? Why's it look that?"
+# Well, you see, there are multiple types of variables with underscores in them
+
+# So first, we have:
+# _variable1
+# __variable2
+# __dunder__ <-- Very important :)
+
+# So what's the difference between all of these?
+# Well, first let's explain these variables with an example
+
+class Car:
+#   Let's talk about the __init__ method, aka a 'dunder' method. 
+#   A dunder method is a function you create to override something else that exists in the Python language
+#   You have to be careful not to initiate your own 'dunder' methods because conventionally Python will always look for these methods 
+#   because they are given special attention by the Python language
+
+
+    def __init__(self, make, model, year): # Note, the term 'dunder' also means 'double underscore'
+        self.make = make
+        self.model = model
+        self.year = year
+        self._secret = "I\'m a car!" # <-- You see here there's only one underscore now. 
+        #    ^   
+        #    |
+        #   This one underscore here is used primarily by developers such as yourself to know that this variable is private.
+
+toyota = Car("Toyota", "Camry", "2020")
+print(toyota._secret) # <-- Accessing private variable
+
