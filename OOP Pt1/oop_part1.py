@@ -148,3 +148,29 @@ person1 = Person("Patrick", "21", "Male")
 print(person1.get_name()) # Prints "Patrick"
 print(person1.get_age()) # Prints "21"
 print(person1.get_gender()) # Prints "Male"
+
+# CLASS ATTRIBUTES AND METHODS
+# So instance methods are defined everytime a class is used and an object is created. 
+# A class attribute, however, is only defined once, and is shared among all instances of that class.
+# Here's an example using the 'Person' class above
+
+class Person:
+    num_people = 0 # <-- This is a class attribute. It's defined only once and is shared across all classes
+
+    def __init__(self, name, age, gender):
+        self.name = name
+        self.age = age
+        self.gender = gender
+        Person.num_people += 1 # <-- Using a class attribute in action
+
+    def get_name(self):   # <------ These are all still instance methods
+        print(self.name)  #       /  /
+                          #      /  /
+    def get_gender(self): # <---   /
+        print(self.gender)#       /
+                          #      /
+    def get_age(self):    # <---
+        print(self.age)
+
+person3 = Person("Patrick", "21", "Male")
+print(Person.num_people) # FYI: You can also print the value of your class attribute like this.
