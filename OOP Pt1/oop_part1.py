@@ -137,9 +137,14 @@ class Person:
     def get_age(self):    # <---
         print(self.age)
 
+    # The above instance methods are examples of 'getters'. In object-oriented programming, there's the idea of using 
+    # methods that are known as 'getters' and 'setters' which both get information and change information.
+
+    # An example of a 'setter' will look something like this
+    def set_new_age(self, new_age):
+        self.age = new_age
+
 person1 = Person("Patrick", "21", "Male")
 print(person1.get_name()) # Prints "Patrick"
 print(person1.get_age()) # Prints "21"
 print(person1.get_gender()) # Prints "Male"
-
-
